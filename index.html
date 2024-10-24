@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>FPS GAME ZONE</title>
+</head>
+<body>
+    <header>
+        <h1>FPS GAME ZONE</h1>
+        <nav>
+            <ul>
+                <li><a href="#games">Jogos</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="#chatbot">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="games">
+            <h2>Jogos Populares</h2>
+            <div class="game-list">
+                <article class="game">
+                    <h3>Counter-Strike</h3>
+                    <img src="imagens.png/cs.png" alt="Counter-Strike">
+                    <p>Um dos FPS mais populares do mundo. Junte-se a equipes e enfrente inimigos em diversos mapas.</p>
+                </article>
+                <article class="game">
+                    <h3>Call of Duty</h3>
+                    <img src="imagens.png/cod.png" alt="Call of Duty">
+                    <p>Uma franquia icônica que traz experiências emocionantes de combate em diversos cenários.</p>
+                </article>
+                <article class="game">
+                    <h3>Valorant</h3>
+                    <img src="imagens.png/valorant.png" alt="Valorant">
+                    <p>Um jogo de tiro tático onde habilidades e estratégia são tão importantes quanto a precisão.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Galeria de Imagens</h2>
+            <div class="gallery">
+                <img src="images/cs.jpg" alt="Counter-Strike">
+                <img src="images/cod.jpg" alt="Call of Duty">
+                <img src="images/valorant.jpg" alt="Valorant">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Sobre Nós</h2>
+            <p>Bem-vindo ao FPS Game Zone! Aqui você encontra tudo sobre os jogos de tiro em primeira pessoa, dicas, novidades e muito mais.</p>
+        </section>
+
+        <section id="comments">
+            <h2>Comentários</h2>
+            <div id="comment-section">
+                <textarea id="comment-input" placeholder="Deixe seu comentário..."></textarea>
+                <button id="submit-comment">Enviar</button>
+                <div id="comments-list"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Seu Nome" required>
+                <input type="email" id="email" placeholder="Seu Email" required>
+                <textarea id="message" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="chatbot">
+            <h2>Chatbot de Assistência</h2>
+            <div id="chatbox">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Pergunte algo...">
+                <button id="send-chat">Enviar</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FPS Game Zone. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
