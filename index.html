@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>FPS GAME ZONE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>CROSSHAIR</title>
 </head>
 <body>
+
     <header>
-        <h1>FPS GAME ZONE</h1>
-        <nav>
-            <ul>
-                <li><a href="#games">Jogos</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#chatbot">Chatbot</a></li>
-            </ul>
-        </nav>
+        <div class="header-background"></div>
+        <div class="header-content">
+            <h1 class="animate">CROSSHAIR</h1>
+            <nav>
+                <ul>
+                    <li><a href="#games">JOGOS</a></li>
+                    <li><a href="#gallery">GALERIA</a></li>
+                    <li><a href="#about">SOBRE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                    <li><a href="#chatbot">CHATBOT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
     <main>
-        <section id="games">
+        <section id="games" class="animate">
             <h2>Jogos Populares</h2>
             <div class="game-list">
                 <article class="game">
@@ -46,51 +74,100 @@
             </div>
         </section>
 
+        
+        
+
         <section id="gallery">
             <h2>Galeria de Imagens</h2>
-            <div class="gallery">
-                <img src="images/cs.jpg" alt="Counter-Strike">
-                <img src="images/cod.jpg" alt="Call of Duty">
-                <img src="images/valorant.jpg" alt="Valorant">
+            <div class="gallery-container">
+                <button class="side-button" id="prev-button" aria-label="Imagem anterior">❮</button>
+                <div class="gallery-item">
+                    <img id="gallery-image" src="imagens.png/valorant4k.jpg" alt="Valorant">
+                    <h3 id="gallery-title">Valorant</h3>
+                    <p id="gallery-description">Um dos FPS mais populares do mundo.</p>
+                </div>
+                <button class="side-button" id="next-button" aria-label="Próxima imagem">❯</button>
             </div>
         </section>
 
-        <section id="about">
+        <section id="about" class="animate">
             <h2>Sobre Nós</h2>
-            <p>Bem-vindo ao FPS Game Zone! Aqui você encontra tudo sobre os jogos de tiro em primeira pessoa, dicas, novidades e muito mais.</p>
+            <p>Bem-vindo ao CROSSHAIR! Aqui você encontra tudo sobre os jogos de tiro em primeira pessoa, dicas, novidades e muito mais.</p>
         </section>
 
-        <section id="comments">
+        <section id="comments" class="animate">
             <h2>Comentários</h2>
             <div id="comment-section">
-                <textarea id="comment-input" placeholder="Deixe seu comentário..."></textarea>
-                <button id="submit-comment">Enviar</button>
+                <textarea id="comment-input" placeholder="Deixe seu comentário..." aria-label="Digite seu comentário aqui"></textarea>
+                <button id="submit-comment" aria-label="Enviar comentário">Enviar</button>
                 <div id="comments-list"></div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="animate">
             <h2>Contato</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Seu Nome" required>
-                <input type="email" id="email" placeholder="Seu Email" required>
-                <textarea id="message" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit">Enviar</button>
+            <form id="contact-form" aria-label="Formulário de contato">
+                <input type="text" id="name" placeholder="Seu Nome" required aria-label="Nome" />
+                <input type="email" id="email" placeholder="Seu Email" required aria-label="Email" />
+                <textarea id="message" placeholder="Sua Mensagem" required aria-label="Mensagem"></textarea>
+                <button type="submit" aria-label="Enviar mensagem">Enviar</button>
             </form>
         </section>
 
-        <section id="chatbot">
+        <section id="chatbot" class="animate">
             <h2>Chatbot de Assistência</h2>
-            <div id="chatbox">
+            <div id="chatbox" aria-label="Caixa de chat">
                 <div id="chat-messages"></div>
-                <input type="text" id="chat-input" placeholder="Pergunte algo...">
-                <button id="send-chat">Enviar</button>
+                <input type="text" id="chat-input" placeholder="Pergunte algo..." aria-label="Digite sua pergunta aqui" />
+                <button id="send-chat" aria-label="Enviar pergunta">Enviar</button>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 FPS Game Zone. Todos os direitos reservados.</p>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 CROSSHAIR. Todos os direitos reservados.</p>
+                <p>Contato: contato@crosshair.com</p>
+            </div>
+        </div>
     </footer>
+    
     <script src="script.js"></script>
+    <script>
+        // Intersection Observer for animations on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+        // Tilt effect on game cards
+        document.querySelectorAll('.game').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                let rect = card.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+
+                card.style.transform = `perspective(1000px) rotateY(${(x - rect.width / 2) / 20}deg) rotateX(${(y - rect.height / 2) / 20}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+            });
+        });
+
+        // Theme toggle for dark mode
+        const toggle = document.querySelector('#theme-toggle');
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
+        }
+    </script>
 </body>
 </html>

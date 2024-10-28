@@ -63,20 +63,81 @@ document.getElementById("send-chat").addEventListener("click", () => {
 
     if (chatInput.value) {
         const userMessage = document.createElement("div");
-        userMessage.textContent = "Você: " + chatInput.value;
+        userMessage.className = "user-message";
+        userMessage.textContent = chatInput.value;
         chatMessages.appendChild(userMessage);
 
-        // Verifica se a pergunta está nas respostas
-        const response = responses[chatInput.value] || "Desculpe, não tenho uma resposta para isso. Tente perguntar algo diferente!";
-        
-        setTimeout(() => {
-            const botResponse = document.createElement("div");
-            botResponse.textContent = "Chatbot: " + response;
-            chatMessages.appendChild(botResponse);
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Rolar para o final
-        }, 1000);
+        const botMessage = document.createElement("div");
+        botMessage.className = "bot-message";
+        botMessage.textContent = responses[chatInput.value] || "Desculpe, não entendi sua pergunta.";
+        chatMessages.appendChild(botMessage);
 
-        chatInput.value = ""; // Limpar o campo após enviar
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Rolar para o final
+        // Limpa a entrada de mensagem
+        chatInput.value = "";
+        
+        // Adiciona rolagem automática
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 });
+
+// Galeria de imagens
+const games = [
+    {
+        title: "Counter-Strike",
+        image: "images/csgo.jpg",
+        description: "Counter-Strike é um clássico jogo de tiro em primeira pessoa que foca no combate em equipe."
+    },
+    {
+        title: "Call of Duty",
+        image: "images/cod.jpg",
+        description: "Call of Duty é uma popular série de jogos de tiro que oferece campanhas emocionantes e modos multiplayer competitivos."
+    },
+    {
+        title: "Valorant",
+        image: "images/valorant4k.jpg", // Aqui está a imagem do Valorant
+        description: "Valorant é um jogo de tiro tático que combina elementos de estratégia e habilidades únicas de personagens."
+    },
+    // Adicione mais jogos conforme necessário
+];
+
+// Variáveis de controle da galeria
+let currentIndex = 0;
+
+// Atualiza a galeria com a imagem correspondente
+function updateGallery() {
+    const galleryImage = document.getElementById('gallery-image');
+    const galleryTitle = document.getElementById('gallery-title');
+    const galleryDescription = document.getElementById('gallery-description');
+
+    galleryImage.src = games[currentIndex].image;
+    galleryImage.onload = () => {
+        console.log('Imagem carregada com sucesso:', games[currentIndex].image);
+    };
+    galleryImage.onerror = () => {
+        console.log('Erro ao carregar a imagem:', games[currentIndex].image);
+    };
+
+    galleryTitle.textContent = games[currentIndex].title;
+    galleryDescription.textContent = games[currentIndex].description;
+
+    // Efeito de transição
+    galleryImage.style.opacity = 0; // Começa invisível
+    setTimeout(() => {
+        galleryImage.style.opacity = 1; // Torna visível
+    }, 100); // Breve atraso para iniciar a transição
+}
+
+// Navegar para a imagem anterior
+document.getElementById('prev-button').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : games.length - 1;
+    updateGallery();
+});
+
+// Navegar para a próxima imagem
+document.getElementById('next-button').addEventListener('click', () => {
+    currentIndex = (currentIndex < games.length - 1) ? currentIndex + 1 : 0;
+    updateGallery();
+});
+
+// Inicializa a galeria
+updateGallery();
